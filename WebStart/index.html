@@ -3,12 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Головна сторінка</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="images/logo.png" width="30" />
+                <img src="images/logo.png" width="100" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,12 +22,12 @@
                         <a class="nav-link" href="/">Головна</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact.htlm">Контакти</a>
+                        <a class="nav-link" a href="/contact.html">Контакти</a>
 
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" href="/pay.htlm">Оплата і доставка</a>
-                    </li>
+                    </li>-->
                 </ul>
 
                 <ul class="navbar-nav px-3">
@@ -39,7 +41,7 @@
             </div>
         </div>
     </nav>
-    <div class="container margin-top-carousel">
+    <!--<div class="container margin-top-carousel">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -66,19 +68,44 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div>
+    </div>-->
 
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-lg-9">
+            <div class="col-md-9 col-lg-10">
                 <h1>Новини</h1>
+
+                <div class="cardcontainer">
+                    <div class="photo">
+                        <img src="https://images.pexels.com/photos/2346006/pexels-photo-2346006.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500">
+                        <div class="photos">Photos</div>
+                    </div>
+                    <div class="content">
+                        <p class="txt4">City Lights In Newyork</p>
+                        <p class="txt5">A city that never sleeps</p>
+                        <p class="txt2">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                    </div>
+                    <div class="footer">
+                        <p><a class="waves-effect waves-light btn" href="#">Read More</a><a id="heart"><span class="like"><i class="fab fa-gratipay"></i>Like</span></a></p>
+                        <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p>
+                    </div>
+                </div>
             </div>
-            <div class="d-none d-md-block col-md-4 col-lg-3">
+            <div class="d-none d-md-block col-md-3 col-lg-2">
                 <h1>Категорії</h1>
             </div>
         </div>
-
-    </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-9">
+                <h1></h1>
+            </div>
+            <div class="d-none d-md-block col-md-4 col-lg-3">
+                <h1>Архів новин</h1>
+            </div>
+        </div>
+        </div>
+        <script src="/js/jquery-3.5.1.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
