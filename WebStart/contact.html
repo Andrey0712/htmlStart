@@ -6,6 +6,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
     <!--<link href="/css/Style.css" rel="stylesheet" />-->
+    <link href="/css/StyleCheckBox.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -27,9 +28,7 @@
                         <a class="nav-link" href="/contact.htlm">Контакти</a>
 
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link" href="/pay.htlm">Оплата і доставка</a>
-                    </li>-->
+
                 </ul>
 
 
@@ -37,38 +36,109 @@
         </div>
     </nav>
 
-    <div class="content">
+    <!--<div class="content">
         <div class="row">
-            <div class="col-12">
+            <div class="offset-md-3 col-md-6">
                 <h1 class=" header">Мои контакты:</h1>
+                <input class="form-control" type="text" id="txtName" value="JavaScript" />
+                <p id="info"> </p>
+                <button class="btn btn-outline-warning" id="ok"> Подать заявку   </button>
             </div>
         </div>
-    </div>
-
-    <div class="container">
+    </div>-->
+    <!--<div class="container">
         <div class="row">
             <div class="col-md-8 col-lg-9">
                 <p>тел. 0978462387</p>
                 <p>Почта: <a href="mailto: nashemistoart@gmail.com">nashemistoart@gmail.com</a></p>
             </div>
-            
+
         </div>
-        
+
+    </div>-->
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <h1 class="text-center">Контакти</h1>
+
+                <form>
+                    <div class="form-group">
+                        <label for="txtLastName">Прізвище</label>
+                        <input type="text" class="form-control" id="txtLastName" placeholder="Ваше прізвище">
+                        <div class="invalid-feedback">
+                            Вкажіть прізвище.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtName">Ім'я</label>
+                        <input type="text" class="form-control" id="txtName" placeholder="Ваше ім'я">
+                        <div class="invalid-feedback">
+                            Вкажіть ім'я.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPhone">Телефон</label>
+                        <input type="text" class="form-control" id="txtPhone" placeholder="Ваш номер телефона">
+                        <div class="invalid-feedback">
+                            Вкажіть номер телефона.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Почта</label>
+                        <input type="text" class="form-control" id="txtEmail" placeholder="Ваш E-mail">
+                        <div class="invalid-feedback">
+                            Вкажіть E-mail.
+                        </div>
+                    </div>
+                    <div style="float:right;">
+                        <a href="/" class="btn btn-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i> На головну</a>
+                        <button class="btn btn-success" id="btnOk">Подати заявку</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Інформація про персону</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>ПІБ: <b><span id="modalFullName"></span></b></p>
+                    <p>Телефон: <b><span id="modalPhone"></span></b></p>
+                    <p>Пошта: <b><span id="modalEmail"></span></b></p>
+
+                    <div class="custom-control form-control-lg custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">&nbsp;Даю повну згоду</label>
+                    </div>
+                    <!--<div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Я даю повну згоду</label>
+                    </div>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Подати заявку</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Скасувати</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-
-    <!--<div class="content">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <p>тел. 0978462387</p>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <p>Почта: <a href="mailto: nashemistoart@gmail.com">nashemistoart@gmail.com</a></p>
-            </div>
-        </div>
-    </div>-->
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/contacts.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+
 </body>
 </html>
