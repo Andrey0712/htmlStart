@@ -9,11 +9,11 @@
     var modalPhone = document.getElementById("modalPhone");
     var modalEmail = document.getElementById("modalEmail");
     var btnOk = document.getElementById("btnOk");
-    //var maskOption = {
-    //    mask: '+{38}(000)000-00-00',
-    //    lazy: false
-    //}
-    //var mask = new IMask(modalPhone, maskOption)
+    var maskOption = {
+        mask: '+{38}(000)000-00-00',
+        lazy: false
+    }
+    var mask = new IMask(txtPhone, maskOption)
     btnOk.onclick = function (e) {
         //console.log(tt);
         //console.log(txtName.value);
@@ -56,7 +56,6 @@
             $("#modalInfo").modal("show");
             modalFullName.innerHTML = lastName + " " + name;
             modalPhone.innerHTML = Phone;
-            //modalPhone.innerHTML = new IMask(Phone, maskOption);
             modalEmail.innerHTML = Email;
 $("#myModal").modal("show");
         }
