@@ -36,6 +36,9 @@
                             <td>${phone}</td>
                             <td>${f}</td>
                             
+<button class="btnEdit"><i class="fa fa-pencil fa-2x text-info cursor-pointer" aria-hidden="true"></i></button>
+    <button class="btnDell"><i class="fa fa-times fa-2x text-danger cursor-pointer" aria-hidden="true"></i></button>
+
                         `;
 
         txtLastName.value = txtName.value = txtPhone.value = "";
@@ -47,7 +50,7 @@
     };
 
 
-    function DeleteRow(e) {
+    btnDell.onclick= function DeleteRow(e) {
         var tbodyUsers = document.getElementById('tbodyUsers');
 
         bootbox.confirm("Ви точно хочете видалити об'єкт?", function (result) {
