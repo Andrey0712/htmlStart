@@ -53,6 +53,8 @@
 
     var btnAddNewUser = document.getElementById("btnAddNewUser");
     var btnAddUserSave = document.getElementById("btnAddUserSave");
+
+    //btnSaveChanges.onclick = btnSaveChangesClick;
     
     //var f = '<input type="checkbox" id="complete" value="no">';
 
@@ -82,7 +84,7 @@
             var tr = document.createElement("tr");
             tr.innerHTML = `
                             <th scope="row">${number++}</th>
-                            <td><img class="img-thumbnail " src="${selectImageBase64.value}" width="60" height="60"/></td>
+                            <td><img class="img-thumbnail " src="${foto}" width="60" height="60"/></td>
                             <td>${lastName}</td>
                             <td>${name}</td>
                             <td>${phone}</td>
@@ -203,22 +205,31 @@ function DeleteRow(e) {
     });
 }
 
-function ChangeRow(tr) {
-    var mainForm = document.getElementById('mainForm');
-    var txtName = document.getElementById("txtName");
-    var txtPhone = document.getElementById("txtPhone");
-    var txtLastname = document.getElementById("txtLastname");
-    var txtMail = document.getElementById("txtMail");
+function ChangeRow(e) {
+    $("#myModal").modal("show");
+    var tr = e.parentElement.parentElement;
+    modalHeader.innerHTML = "Редагувати користувача";
 
-    if (mainForm.checkValidity() === true) {
-        tr.cells.item(1).innerHTML = txtName.value;
-        tr.cells.item(2).innerHTML = txtLastname.value;
-        tr.cells.item(3).innerHTML = txtPhone.value;
-        tr.cells.item(4).innerHTML = txtMail.value;
-        $('#registerModal').modal('hide');
-        txtName.value = txtPhone.value = txtLastname.value = txtMail.value = "";
-    }
+    // вытягимаем данные по рядочкам для редактирывания
+  
+    var valueLastName = $(tr).find('td').get(1).innerHTML;
+    var valueName = $(tr).find('td').get(2).innerHTML;
+    var valuePhone = $(tr).find('td').get(3).innerHTML;
+    var valueMail = $(tr).find('td').get(4).innerHTML;
+    var photo = $(tr).find('img').get(0).src;
+
+    tbodyUsers.removeChild(e.parentElement.parentElement); //удаляем  рядок из старыми данными
+
+    // Редактируем
+    txtLastName.value = valueLastName;
+    txtName.value = valueName;
+    txtPhone.value = valuePhone;
+    txtEmail.value = valueMail;
+    imgPhoto.src = photo;
 }
+
+
+
 
 
     
