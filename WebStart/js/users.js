@@ -191,9 +191,86 @@
 
     
 
+    var draganddrop = document.getElementById('draganddrop');
+    draganddrop.addEventListener('dragenter', DragIn, false);
+    draganddrop.addEventListener('dragover', DragIn, false);
+
+    draganddrop.addEventListener('dragleave', DragOut, false);
+    draganddrop.addEventListener('drop', DragOut, false);
 
 
+    draganddrop.addEventListener('dragenter', PreventDefaults, false);
+    draganddrop.addEventListener('dragover', PreventDefaults, false);
+
+    draganddrop.addEventListener('dragleave', PreventDefaults, false);
+    draganddrop.addEventListener('drop', PreventDefaults, false);
+
+    draganddrop.addEventListener('drop', SaveImage, false);
+
+    function DragIn(e) {
+        draganddrop.classList.add('dragIn');
     }
+
+    function DragOut(e) {
+        draganddrop.classList.remove('dragIn');
+    }
+
+    function PreventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    function SaveImage(e) {
+        var files;
+        if (e.files) {
+            files = e.files;
+        } else if (e.dataTransfer) {
+            files = e.dataTransfer.files;
+        }
+
+        if (files) {
+            if (files[0]) {
+                var file = files[0];
+                txtPhoto.files = files;
+                isValidImage(imgPhoto);
+            }
+        }
+    }
+
+}
+
+////DragAndDrop
+
+//var draganddrop = document.getElementById('draganddrop');
+//draganddrop.addEventListener('dragenter', DragIn, false);
+//draganddrop.addEventListener('dragover', DragIn, false);
+
+//draganddrop.addEventListener('dragleave', DragOut, false);
+//draganddrop.addEventListener('drop', DragOut, false);
+
+
+//draganddrop.addEventListener('dragenter', PreventDefaults, false);
+//draganddrop.addEventListener('dragover', PreventDefaults, false);
+
+//draganddrop.addEventListener('dragleave', PreventDefaults, false);
+//draganddrop.addEventListener('drop', PreventDefaults, false);
+
+//draganddrop.addEventListener('drop', SaveImage, false);
+
+//function DragIn(e) {
+//    draganddrop.classList.add('dragIn');
+//}
+
+//function DragOut(e) {
+//    draganddrop.classList.remove('dragIn');
+//}
+
+//function PreventDefaults(e) {
+//    e.preventDefault();
+//    e.stopPropagation();
+//}
+
+
 
 function DeleteRow(e) {
     var tbodyUsers = document.getElementById('tbodyUsers');
@@ -211,7 +288,8 @@ function ChangeRow(e) {
     
 
     // вытягимаем данные по рядочкам для редактирывания
-    imgPhoto.src = photo = $(tr).find('img').get(0).src;
+
+    imgPhoto.src = $(tr).find('img').get(0).src;
     txtLastName.value = $(tr).find('td').get(1).innerHTML;
     txtName.value = $(tr).find('td').get(2).innerHTML;
     txtPhone.value = $(tr).find('td').get(3).innerHTML;

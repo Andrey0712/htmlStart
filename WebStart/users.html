@@ -5,7 +5,8 @@
     <title>Користувачі</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
-    
+    <link href="css/products.css" rel="stylesheet" />
+    <link href="css/dropzone.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -29,6 +30,10 @@
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/users.html">Користувачі</a>
+
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/products.html">Продукти</a>
 
                     </li>
 
@@ -124,43 +129,75 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="/images/no-image.jpg" width="100%"
-                                     id="imgPhoto" />
-                            </div>
-                            <input type="hidden" id="selectImageBase64" />
-                            <div class="col-md-9">
-                                <div class="custom-file">
-                                    <input type="file"
-                                           class="custom-file-input"
-                                           id="fileImage"
-                                           accept=".jpg, .jpeg, .png">
-                                    <label class="custom-file-label" for="fileImage">Оберіть фото...</label>
-                                    <div class="invalid-feedback">Потрібно обрати фото</div>
+                        <!--<div class="form-group" id="draganddrop">
+    <h4 class="text-dark text-center">Фотографія продукта</h4>
+    <input type="hidden" id="selectImageBase64" />-->
+                        <!--<div class="custom-file d-none">
+        <input type="file" class="custom-file-input" id="imgPhoto" />
+        <label for="fileImage" class="custom-file-label">Оберіть фотографію</label>
+    </div>-->
+                        <!--<div class="text-muted form-text text-center" for="imgPhoto">
+            <img id="imgPhotoBlock" src="/images/no-image.jpg"
+                 width="150" height="150" class="cursor-pointer" />
+            <label class="d-block">Оберіть фотографію, або перенесіть зображення</label>
+            <div class="invalid-feedback">
+                Фотографію не обрано!
+            </div>
+            <div class="valid-feedback">
+                Файл обрано!
+            </div>
+        </div>
+    </div>-->
+
+                        <div class="form-group" id="draganddrop">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="/images/no-image.jpg" width="100%"
+                                         id="imgPhoto" />
+                                </div>
+                                <input type="hidden" id="selectImageBase64" />
+                                <div class="col-md-9">
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               class="custom-file-input"
+                                               id="fileImage"
+                                               accept=".jpg, .jpeg, .png">
+                                        <label class="custom-file-label" for="fileImage">Оберіть фото...</label>
+                                        <div class="invalid-feedback">Потрібно обрати фото</div>
+                                    </div>
+                                    <!--<div class="text-muted form-text text-center" for="fileImage">
+                <img id="imgPhotoBlock" src="/images/no-image.jpg"
+                     width="150" height="150" class="cursor-pointer" />
+                <label class="d-block">Оберіть фотографію, або перенесіть зображення</label>
+                <div class="invalid-feedback">
+                    Фотографію не обрано!
+                </div>
+                <div class="valid-feedback">
+                    Файл обрано!
+                </div>
+            </div>-->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnAddUserSave">Зберегти</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Скасувати</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnAddUserSave">Зберегти</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Скасувати</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    
 
 
-    <script src="/js/jquery-3.5.1.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/bootbox.min.js"></script>  
-    <script src="/js/imask.js"></script>
-    <script src="/js/users.js"></script>
 
-</body>
-</html>
+
+        <script src="/js/jquery-3.5.1.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/bootbox.min.js"></script>
+        <script src="/js/imask.js"></script>
+        <script src="/js/users.js"></script>
+
+    </body>
+    </html>
