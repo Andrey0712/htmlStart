@@ -208,24 +208,20 @@ function DeleteRow(e) {
 function ChangeRow(e) {
     $("#myModal").modal("show");
     var tr = e.parentElement.parentElement;
-    modalHeader.innerHTML = "Редагувати користувача";
+    
 
     // вытягимаем данные по рядочкам для редактирывания
-  
-    var valueLastName = $(tr).find('td').get(1).innerHTML;
-    var valueName = $(tr).find('td').get(2).innerHTML;
-    var valuePhone = $(tr).find('td').get(3).innerHTML;
-    var valueMail = $(tr).find('td').get(4).innerHTML;
-    var photo = $(tr).find('img').get(0).src;
-
+    imgPhoto.src = photo = $(tr).find('img').get(0).src;
+    txtLastName.value = $(tr).find('td').get(1).innerHTML;
+    txtName.value = $(tr).find('td').get(2).innerHTML;
+    txtPhone.value = $(tr).find('td').get(3).innerHTML;
+    txtEmail.value = $(tr).find('td').get(4).innerHTML;
+    
+    modalHeader.innerHTML = "Редагувати користувача " + txtLastName.value + " " + txtName.value;
+    
     tbodyUsers.removeChild(e.parentElement.parentElement); //удаляем  рядок из старыми данными
 
-    // Редактируем
-    txtLastName.value = valueLastName;
-    txtName.value = valueName;
-    txtPhone.value = valuePhone;
-    txtEmail.value = valueMail;
-    imgPhoto.src = photo;
+    
 }
 
 
