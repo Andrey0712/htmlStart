@@ -8,7 +8,7 @@
     var $productsBlock = $("#productsBlock");
     var $imgPhotoBlock = $("#imgPhotoBlock");
     var uploader;
-    var cropper = null;
+    var cropper = null;//обявили кропера
     var $cropperModal = $("#cropperModal");
 
     $("#btnAddProduct").on("click", function () {
@@ -17,14 +17,14 @@
     });
 
     $imgPhotoBlock.on("click", function () {
-        if (uploader)
+        if (uploader)//проверяем существует ли
             uploader.remove();
-        uploader = $(`<input type="file" class="d-none" accept=".jpg, .jpeg, .png" />`);
+        uploader = $(`<input type="file" class="d-none" accept=".jpg, .jpeg, .png" />`);//формирует масив
 
         uploader.click();
 
         uploader.on("change", function (e) {
-            SaveImage(uploader[0]);
+            SaveImage(uploader[0]);//сохраняем первій обьект ДОМ дерева
         });
 
     });
@@ -69,7 +69,7 @@
 
     });
 
-    function closeDialog() {
+    function closeDialog() {//закрывае модалку и очищаем строки
         $txtName.val("");
         $txtDescription.val("");
         $txtPrice.val("");
@@ -107,8 +107,8 @@
         e.stopPropagation();
     }
 
-    function SaveImage(e) {
-        initCropper();
+    function SaveImage(e) {//сохраняем фотку
+        initCropper();//вызываем кропера
         var files;
         if (e.files) {
             files = e.files;
@@ -122,9 +122,10 @@
 
                 const reader = new FileReader();
                 reader.onload = function () {
-                    //$imgPhotoBlock.attr("src", reader.result);
+                    $imgPhotoBlock.attr("src", reader.result);//Меняется атребут с src на reader.result
                     $cropperModal.show();
-                    cropper.replace(reader.result);
+
+                    cropper.replace(reader.result);//загружаем рисунок
                     //showSuccess(fileImage);
                 }
 
@@ -133,22 +134,22 @@
         }
     }
 
-    $("#btnCropImg").on("click", function () {
-        $imgPhotoBlock.attr("src", cropper.getCroppedCanvas().toDataURL());
+    $("#btnCropImg").on("click", function () {//обрезаем фотку
+        $imgPhotoBlock.attr("src", cropper.getCroppedCanvas().toDataURL());//кропер получил Base64 обрезал и выдал его же
         $cropperModal.hide();
     });
 
-    $("#cropperModal").on("click", "[data-closeCustomDialog]", function () {
+    $("#cropperModal").on("click", "[data-closeCustomDialog]", function () {//в модалке если клацаем по атрибуту data-closeCustomDialog то закрівается модалка
         $cropperModal.hide();
     });
 
-    function initCropper() {
-        if (cropper == null) {
+    function initCropper() {//инициализация кропера
+        if (cropper == null) {// если его нет то рисуем
             const imageCropper = document.getElementById('imageCropper');
             cropper = new Cropper(imageCropper, {
-                aspectRatio: 1 / 1,
-                viewMode: 1,
-                autoCropArea: 0.5
+                aspectRatio: 1 / 1,//соотношение сторон
+                viewMode: 1,// не выходит за область рисунка
+                autoCropArea: 0.5 //размер выделяемой области
             });
         }
     }
